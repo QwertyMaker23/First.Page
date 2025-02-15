@@ -4,72 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Yogyakarta Page</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-        /* Styling teks header */
-        h5 {
-            color: rgb(25, 136, 116);
-        }
-
-        h1 {
-            background-color: rgb(11, 52, 65);
-            color: rgb(178, 202, 22);
-            padding: 15px;
-            display: inline-block;
-            font-size: 3vw; /* Ukuran font responsif */
-            border-radius: 10px;
-        }
-
-        /* Responsif untuk perangkat kecil */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 5vw; /* Perbesar teks di layar kecil */
-                padding: 10px;
-            }
-        }
-
-        /* Responsif untuk perangkat sangat kecil */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 6vw;
-                padding: 8px;
-            }
-        }
-
-        /* Styling gambar agar responsive */
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Styling tombol */
-        .btn-warning {
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
+        h1 {color: rgb(25, 136, 116);}
+        h1 {background-color: rgb(11, 52, 65);color: rgb(178, 202, 22);padding: 15px;display: inline-block;font-size: 3vw;border-radius: 10px;transition: color 0.5s;}@media (max-width: 768px) {
+            h1 {font-size: 5vw;padding: 10px;}}@media (max-width: 480px){
+            h1 {font-size: 6vw;padding: 8px;}}
+        img {width: 100%;height: auto;border-radius: 10px;}.btn-warning { font-size: 1.2rem;padding: 10px 20px;border-radius: 5px;cursor: pointer;}
     </style>
 </head>
 <body>
 
-<header></header>
+<header>
 <main>
     <section id="home">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Kolom Kiri -->
                 <div class="col-12 col-lg-6 pt-4 text-center text-lg-start">
                     <h5>Kaistimewaan Ngayogyakarto</h5>
-                    <h1>This Is Yogyakarta</h1>
+                    <h1 id="judul">This Is Yogyakarta</h1>
                     <p class="text-secondary">Jelajahi keindahan Yogyakarta secara virtual hanya di sini</p>
-                    <button type="button" class="btn btn-warning">Find out more</button>
+                    <button type="button" class="btn btn-warning" id="findOutMore">
+                        Find out more
+                    </button>
                 </div>
-
-                <!-- Kolom Kanan -->
                 <div class="col-12 col-lg-6 text-center">
                     <img src="jogja.png" class="img-fluid" alt="Tugu Jogja">
                 </div>
@@ -77,11 +35,15 @@
         </div>
     </section>
 </main>
+</header>
 
-<!-- Bootstrap JS -->
+<script>
+    let tombol = document.getElementById("findOutMore");
+    let judul = document.getElementById("judul");
+    tombol.addEventListener("click", function() {alert("Selamat datang di Yogyakarta! Temukan lebih banyak keindahan di sini.");
+        setTimeout(function() {
+            window.location.href = "https://pariwisata.jogjakota.go.id/";}, 2000); });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
-  
